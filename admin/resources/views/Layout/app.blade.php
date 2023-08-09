@@ -14,9 +14,16 @@
     <link href="{{asset('css/datatables.min.css')}}" rel="stylesheet">
     <link href="{{asset('css/datatables-select.min.css')}}" rel="stylesheet">
 </head>
-<body>
+<body class="fix-header fix-sidebar">
+
+
+@include('Layout.menu')
+
 
 @yield('content')
+
+
+</div>
 
 
 <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
