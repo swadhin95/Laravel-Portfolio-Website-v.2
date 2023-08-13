@@ -11,11 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('visitor',function(Blueprint $table){
+        Schema::create('services',function(Blueprint $table){
             $table->bigIncrements('id');
-            $table->string('ip_address');
-            $table->string('visit_time');
-        });
+            $table->string('service_name');
+	        $table->string('service_des');
+            $table->string('service_img');
+});
+
     }
 
     /**
