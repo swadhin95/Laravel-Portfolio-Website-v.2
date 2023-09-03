@@ -4,6 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\VisitorModel;
+use App\Models\ServicesModel;
+use App\Models\CourseModel;
+use App\Models\ProjectsModel;
+use App\Models\ContactModel;
+use App\Models\ReviewModel;
+
 
 class HomeController extends Controller
 {
@@ -15,6 +21,39 @@ class HomeController extends Controller
 
         VisitorModel::insert(['ip_address'=>$UserIP,'visit_time'=>$timeDate]);
 
-        return view('Home');
+        $ServicesData= json_decode(ServicesModel::orderBy('id','desc')->limit(8)->get());
+        $CoursesData= json_decode(CourseModel::orderBy('id','desc')->limit(6)->get());
+        $ProjectData= json_decode(ProjectsModel::orderBy('id','desc')->limit(8)->get());
+        $ReviewData= json_decode(ReviewModel::all());
+
+
+        return view('Home',[
+        'ServicesData'=>$ServicesData,
+        'CoursesData'=>$CoursesData,
+        'ProjectData'=>$ProjectData,
+        'ReviewData'=>$ReviewData
+    ]);
+    }
+
+    function ContactSend(Request $Request){
+
+        $contact_name=$Request->input('contact_name');
+        $contact_mobile=$Request->input('contact_mobile');
+        $contact_email=$Request->input('contact_email');
+        $contact_msg=$Request->input('contact_msg');
+        $result=ContactModel::insert([
+            'contact_name'=>$contact_name,
+            'contact_mobile'=>$contact_mobile,
+            'contact_email'=>$contact_email,
+            'contact_msg'=>$contact_msg,
+
+        ]);
+
+        if($result==true){
+            return 1;
+        }
+        else{
+            return 0;
+        }
     }
 }
