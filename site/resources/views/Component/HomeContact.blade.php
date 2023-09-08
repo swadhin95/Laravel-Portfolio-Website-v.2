@@ -1,8 +1,8 @@
-<div id="Contact" class="container-fluid section-marginTop parallax text-center">
-    <div class="row ">
+<div id="Contact" class=" container container-fluid section-marginTop parallax text-center">
+    <div class="row " id="BackgroundImage">
         <div class="col-md-6 contact-form ">
             <h5 class="help-line-title"> <i class="fas icon-custom-color fa-headphones-alt"></i> হেলপ লাইন </h5>
-            <h5 class="help-line-title m-0">  ০১৭৭৪৬৮৮১৫৯ </h5>
+            <h5 class="help-line-title m-0"> ০১৬৮৫৯৬৪০৭৪ </h5>
         </div>
         <div class="col-md-4 contact-form">
                 <h5 class="service-card-title">যোগাযোগ করুন </h5>

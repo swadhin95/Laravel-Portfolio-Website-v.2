@@ -6,6 +6,7 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\PolicyController;
 use App\Http\Controllers\TermsController;
+use App\Http\Controllers\ContactController;
 
 
 Route::get('/', [HomeController::class, 'HomeIndex']);
@@ -16,3 +17,4 @@ Route::get('/Courses', [CourseController::class, 'CourseIndex']);
 
 Route::get('/Policy', [PolicyController::class, 'PolicyIndex']);
 Route::get('/Terms', [TermsController::class, 'TermsIndex']);
+Route::get('/Contact', [ContactController::class, 'ContactPage']);
